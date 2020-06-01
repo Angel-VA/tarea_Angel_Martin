@@ -107,9 +107,27 @@ public class Ventana extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnVerDiasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerDiasActionPerformed
-
-        String mesSeleccionado = (String) cmbMeses.getSelectedItem();
-        lblMensaje.setText(mesSeleccionado + " tiene " + Year.getDiasMes(mesSeleccionado) + " días");
+        String mesSeleccionado=(String)cmbMeses.getSelectedItem();
+        switch(mesSeleccionado){
+            case "enero":
+            case "marzo":
+            case "mayo":
+            case "julio":
+            case "agosto":
+            case "octubre":
+            case "diciembre":
+                lblMensaje.setText(mesSeleccionado+ " tiene 31 días");
+                break;
+            case "abril":
+            case "junio":
+            case "septiembre":
+            case "noviembre":
+                lblMensaje.setText(mesSeleccionado+ " tiene 30 días");
+                break;
+            case "febrero":
+                lblMensaje.setText(mesSeleccionado+ " tiene 28 días y los años bisiestos 29 días");
+                break;
+        }
     }//GEN-LAST:event_btnVerDiasActionPerformed
 
     /**
